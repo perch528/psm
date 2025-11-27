@@ -16,3 +16,6 @@ group:dog
 g:组名: 命令
 ## 链接共享盘 (connect share disk)
 g:dog: net use u: \\192.168.1.105\f 123456 /user:admin
+## 使用教程 (use guide)
+/final/movePsm.bat
+移动minion到自启动文件夹，自动打开文件夹后配置ini文件
