@@ -9,7 +9,7 @@ def check_file_exists(filepath):
         return False
 
 def read_group_config():
-    with open(r'group_config.txt', 'r', encoding='utf-8') as gf:
+    with open(r'group_config.ini', 'r', encoding='utf-8') as gf:
         content = gf.read().strip()
         if ':' in content:
             group_str = content.split(':', 1)[1].strip()
@@ -52,9 +52,9 @@ def slave_receive_host_ip():
                         print('读取配置文件函数出现错误')
                     print('当前配置组别为:', current_group)
                 except FileNotFoundError:
-                    print("警告：group_config.txt文件不存在，使用默认组别0")
+                    print("警告：group_config.ini文件不存在，使用默认组别0")
                 except (ValueError, IndexError):
-                    print("警告：group_config.txt格式错误（正确格式：groups:数字），使用默认组别0")
+                    print("警告：group_config.ini格式错误（正确格式：groups:数字），使用默认组别0")
                 # 执行主机命令
                 if (str(group) == str(current_group)) or (group == 'all'):
                     print(f"执行主机命令: {command}")
@@ -71,5 +71,5 @@ def slave_receive_host_ip():
         print("监听套接字已关闭")
 
 if __name__ == "__main__":
-    if not check_file_exists('group_config.txt'):
+    if not check_file_exists('group_config.ini'):
         slave_receive_host_ip()
