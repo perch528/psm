@@ -1,4 +1,4 @@
-# psm
+# psm (Perch 's Master and Minion)
 Multi-host Synchronized Operation and Maintenance Tool (多主机同步运维工具)
 ## 流程 (flow)
 服务端:
